@@ -25,8 +25,7 @@ public class PatientService {
                         .map( PatientMapper::toDTO).toList();
 
 
-
-
+        return patientResponseDTOS;
     }
 
 
