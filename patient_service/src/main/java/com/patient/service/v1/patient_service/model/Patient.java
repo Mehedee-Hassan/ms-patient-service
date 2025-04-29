@@ -3,6 +3,7 @@ package com.patient.service.v1.patient_service.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -26,12 +27,24 @@ public class Patient
     private String email;
 
     @NotNull
-    @Email
     @Column(unique = true)
     private String address;
 
     @NotNull
     private LocalDate dateOfBirth;
+
+    @NotNull
+    private LocalDate registeredDate;
+
+    public LocalDate getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(LocalDate registeredDate) {
+        this.registeredDate = registeredDate;
+    }
+
+
 
     public UUID getId() {
         return id;
