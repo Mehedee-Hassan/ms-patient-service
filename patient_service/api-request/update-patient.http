@@ -1,0 +1,9 @@
+PUT http://localhost:4000/patients/169eb9c4-8737-4be5-8470-23fc2f33525d
+
+{
+  "name": "asdfasdf Doe Kafka Test",
+  "email": "kafka_test11@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}

@@ -1,15 +1,20 @@
 package com.patient.service.v1.patient_service.controller;
 
 
+import com.patient.service.v1.patient_service.advicer.PatientNotFoundException;
 import com.patient.service.v1.patient_service.dto.PatientRequestDTO;
 import com.patient.service.v1.patient_service.dto.PatientResponseDTO;
+import com.patient.service.v1.patient_service.dto.validators.CreatePatientValidationGroup;
 import com.patient.service.v1.patient_service.model.Patient;
 import com.patient.service.v1.patient_service.service.PatientService;
 import jakarta.validation.Valid;
+import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/patients")
@@ -29,13 +34,24 @@ public class PatientController {
 
     @PostMapping
     public ResponseEntity<PatientResponseDTO> createPatient(
-            @Valid
+            @Validated(
+                    {Default.class, CreatePatientValidationGroup.class})
             @RequestBody
             PatientRequestDTO patientRequestDTO
     )
     {
         PatientResponseDTO patientResponseDTO = patientService
                 .createPatient(patientRequestDTO);
+
+        return ResponseEntity.ok().body(patientResponseDTO);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PatientResponseDTO>
+    updatePatient( @Validated({Default.class})
+                   @PathVariable UUID id, @RequestBody PatientRequestDTO patientRequestDTO)
+            throws PatientNotFoundException {
+        PatientResponseDTO patientResponseDTO = patientService.updatePatient(id,patientRequestDTO);
 
         return ResponseEntity.ok().body(patientResponseDTO);
     }

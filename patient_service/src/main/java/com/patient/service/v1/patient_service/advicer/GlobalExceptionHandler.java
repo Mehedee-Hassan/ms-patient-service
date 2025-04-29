@@ -1,6 +1,7 @@
 package com.patient.service.v1.patient_service.advicer;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -40,6 +41,12 @@ public class GlobalExceptionHandler {
       return ResponseEntity.badRequest().body(errors);
     }
 
-
+    @ExceptionHandler(PatientNotFoundException.class)
+    public  ResponseEntity<Map<String, String>>
+        handlePatientNotFoundException(PatientNotFoundException ex){
+        Map<String,String> errors = new HashMap<>();
+        errors.put("message","Patient not found");
+        return ResponseEntity.badRequest().body(errors);
+    }
 
 }
