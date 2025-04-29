@@ -1,0 +1,12 @@
+GRPC localhost:6565/BillingService/CreateBillingAccount
+
+{
+     "patientId" = "12345";
+     "name" = "test name";
+     "email" = "test_name@gmail.com";
+}
+
+message BillingResponse {
+     "accountId" = 1;
+     "status" = 2;
+}
