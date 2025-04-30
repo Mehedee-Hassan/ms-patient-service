@@ -40,6 +40,8 @@ dependencies {
 	implementation("io.github.lognet:grpc-spring-boot-starter:5.2.0")
 	implementation("com.google.protobuf:protobuf-java:4.30.2")
 
+	implementation("org.springframework.kafka:spring-kafka:3.2.0")
+
 }
 
 
