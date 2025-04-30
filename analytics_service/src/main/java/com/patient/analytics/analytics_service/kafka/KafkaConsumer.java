@@ -20,7 +20,7 @@ public class KafkaConsumer {
         try{
             PatientEvent patientEvent = PatientEvent.parseFrom(event);
             // call service layer
-            log.error("Consumer analytics received patient events name={}, email = {}"
+            log.info("Consumer analytics received patient events name={}, email = {}"
                     ,patientEvent.getName()
                     ,patientEvent.getEmail());
 
