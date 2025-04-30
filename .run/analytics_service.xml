@@ -7,7 +7,7 @@
         <option name="envVars">
           <list>
             <DockerEnvVarImpl>
-              <option name="name" value="SPRING_KAFKA_BOOTSTRUP_SERVERS" />
+              <option name="name" value="SPRING_KAFKA_BOOTSTRAP_SERVERS" />
               <option name="value" value="kafka:9092" />
             </DockerEnvVarImpl>
           </list>
