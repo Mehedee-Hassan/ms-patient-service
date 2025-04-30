@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "acd8f33d-2c21-4659-a8af-653a81eb19d3",
+		"name": "patient-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44543272",
+		"_collection_link": "https://hassan-8940228.postman.co/workspace/hassan's-Workspace~b870cd9f-efe8-4a3f-8574-96b470dec59d/collection/44543272-acd8f33d-2c21-4659-a8af-653a81eb19d3?action=share&source=collection_link&creator=44543272"
+	},
+	"item": [
+		{
+			"name": "localhost:4000/patients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/patients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe test 15\",\n  \"email\": \"kafka_test135@example.com\",\n  \"address\": \"123 main street22\",\n  \"dateOfBirth\": \"1995-09-09\",\n  \"registeredDate\": \"2024-11-28\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4004/api/patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test34\",\n  \"email\": \"test34@example.com\",\n  \"address\": \"123 main street22\",\n  \"dateOfBirth\": \"1995-09-09\",\n  \"registeredDate\": \"2024-11-28\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4004/api/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"testuser@test.com\",\n    \"password\":\"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4005/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4005",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4005/validate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0NjA1MDE4Mn0.gsmBkIWzA3mBfSX2ZtE0AhcQ8Ylgq9PVHFVChT4tVzmq7iCgh7c3QBAGoG6mBTODbqE_WZPslbeJHWrl7VNHkw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:4005/validate",
+					"host": [
+						"localhost"
+					],
+					"port": "4005",
+					"path": [
+						"validate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
