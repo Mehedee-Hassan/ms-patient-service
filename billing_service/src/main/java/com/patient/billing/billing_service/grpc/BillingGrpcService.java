@@ -22,7 +22,7 @@ public class BillingGrpcService extends BillingServiceImplBase {
         log.info("CreateBillingService request received: {}",billingRequest.toString());
 
         BillingResponse response = BillingResponse.newBuilder()
-                .setAccountId("1234")
+                .setAccountId("1234")  // properties from BillingResponse
                 .setStatus("ACTIVE")
                 .build();
         responseStreamObserver.onNext(response);
