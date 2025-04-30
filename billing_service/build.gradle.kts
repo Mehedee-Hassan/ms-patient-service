@@ -45,7 +45,7 @@ protobuf {
 	generateProtoTasks {
 		all().forEach { task ->
 			task.plugins {
-				create("grpc") // <--- FIXED here!
+				create("grpc")
 			}
 		}
 	}
