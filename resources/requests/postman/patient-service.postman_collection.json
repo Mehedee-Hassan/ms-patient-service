@@ -93,6 +93,78 @@
 			"response": []
 		},
 		{
+			"name": "api-gateway-login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"testuser@test.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4004/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-gateway-validate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0NjA1MTcwNH0.AVutCiIQRb1X_og7tIVRbCIVQ0OoI4Z6ZIHbP-aTovO4WH5bNut7MOMmfraXpAeN8uH6Q3PS8joB01_KQcMK_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test34\",\n  \"email\": \"test34@example.com\",\n  \"address\": \"123 main street22\",\n  \"dateOfBirth\": \"1995-09-09\",\n  \"registeredDate\": \"2024-11-28\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4004/auth/validate",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"auth",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "login auth",
 			"request": {
 				"auth": {
@@ -123,7 +195,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:4005/validate",
+			"name": "auth validate",
 			"request": {
 				"auth": {
 					"type": "bearer",
