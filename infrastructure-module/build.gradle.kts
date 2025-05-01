@@ -12,8 +12,8 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("software.amazon.awscdk:aws-cdk-lib:2.181.1")
-    implementation("com.amazonaws:aws-java-sdk:1.12.78")
+    implementation("software.amazon.awscdk:aws-cdk-lib:2.178.1")
+    implementation("com.amazonaws:aws-java-sdk:1.12.780")
 }
 
 tasks.test {
