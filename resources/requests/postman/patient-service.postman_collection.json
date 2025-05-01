@@ -124,6 +124,47 @@
 			"response": []
 		},
 		{
+			"name": "api-gateway-login doc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0NjA5NDk0Mn0.rqDO_UlskNSkUZCkk56Af34Rd-kcugzWkhwHADnis0JxKnEVVR9TGl70HDSptMgUI0JW2pBjrdM-gjPKOsqm_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"testuser@test.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4004/api-docs/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"api-docs",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "api-gateway-validate",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
